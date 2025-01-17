@@ -10,7 +10,7 @@
     // o simbolo do dinheiro $ e {}, só por dentro que fica
     //  alert (`parabéns ${nome} você é um mugwara e acertou a idade é ${idadeDoLufinho}`);}
 // ++ é a mesma coisa que adicionar +1 a um valor sempre que o código passar por ali
-
+//AGORA TENHO GITHUB
 
 alert ("bem vindo ao acerte a idade do lufinho");
 
