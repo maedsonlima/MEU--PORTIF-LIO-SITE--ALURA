@@ -19,7 +19,9 @@
 
 let nome = prompt("insira seu nome pirata!")
 
-let idadeDoLufinho = parseInt(Math.random () *100 + 1);
+let numeroMaximo = 1000 ;
+
+let idadeDoLufinho = parseInt(Math.random () * numeroMaximo + 1);
 // parseInt vai converter todo calculo feito do que tá em parenteses na frente para um inteiro
 // Math.random () vai gerar o número entre 0 e 1, ex: 0,25253. para deixar esse 
 // esse número na casa de 1 e 100, multiplicamos por 100, ex: 25,253. 
@@ -41,7 +43,7 @@ console.log (idadeDoLufinho);
 // enquanto o chute não for igual a idade do lufinho
 while (chute != idadeDoLufinho) {
 
-chute = prompt("Qual a idade do luffy de 1 a 100?");
+chute = prompt(`Qual a idade do luffy entre 1 e ${numeroMaximo}`);
 
     if (chute == idadeDoLufinho){
         break;  //serve para parar a execução do código.
