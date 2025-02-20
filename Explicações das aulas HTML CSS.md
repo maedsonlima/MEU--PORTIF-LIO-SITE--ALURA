@@ -52,16 +52,57 @@ Aqui é como inserimos imagens, temos algumas observações:
 - *<img >* não precisa fechar, ela indica que vamos inserir a imagem no local
 - *src=* significa search, é o nome do nosso arquivo (deve estar na mesma pasta do projeto
 - *alt* = é apenas uma descrição do que é a imagem, não aparece na página principal.
-
-
+---
+---
+## curso 3 - HTML e CSS ambientes de desenvolvimento, estrutura de arquivos e tags
+---
+---
+### aula 3.0 -  CORPO BASE BASE DE UMA PÁGINA 
 ```html
+<!DOCTYPE html>
+<html lang="pt-br"a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portifólio</title>
+</head>
+<body>
+    <header></header>
+    <main></main>
+    <footer></footer>
+</body>
+</html>
 ````
-
+### ESCLARECENDO AS NOVAS TAGS:
 ```html
+<html lang="pt-br"> 
 ````
-
+Lang é a linguagem que ultilizaremos, no caso português Brasil
 ```html
+<meta charset="UTF-8">
 ````
+Dicionário de caracteres que serão ultilizados, deixar esse é o mais usado.
+```html
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+````
+Configuração específica pro edge, orienta o computador a utilizar a versão mais atual, mesmo que não ultilizemos, devemos usar porque o usuário pode querer utilizar.
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+````
+Pega a largura e altura do dispositivo que está acessando a página e cria uma escala compatível com o tamanho da tela (evita que fique uma fonte enorme em tela pequena).
+```html
+<header></header>
+````
+Cabeçalho da página, parte superior que fica em destaque
+```html
+<main></main>
+````
+Conteúdo principal (parágrafos, botões)
+```html
+<footer></footer>
+````
+Rodapé da página, parte de baixo
 
 ```html
 ````
