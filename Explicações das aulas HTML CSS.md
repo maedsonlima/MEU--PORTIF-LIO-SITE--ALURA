@@ -104,6 +104,52 @@ Conteúdo principal (parágrafos, botões)
 ````
 Rodapé da página, parte de baixo
 
+----
+### aula 4.0 - Detalhando o html
+
+```html
+<strong></strong>
+````
+Evidência um texto, destaca, dizemos ao html: destaque isso.
+```html
+<a href="url"> </a>
+````
+- A tag <a> TAG ANCORA, no HTML é usada para criar 
+- O Nome que estiver no meio aparecerá na tela
+- href = "" é igual ao scr de inserir imagens, é nele que você coloca o link da página, é onde insere o conteúdo pretendido, no caso o link.
+
+---
+### aula 5.0 - Iniciando em CSS
+#### Geralmente se usa "style.css" no nome do css
+#### Para que a estilização funcione,precisamos inserir no <head> (onde fica os metadados) códigos que vão fazer a conexão do html e css
+```html
+<link rel="stylesheet" href="style.css">   
+````
+- o rel indica qual a relação desse documento html com o outro documento Css
+- Stylesheet é uma folha de estilo, que vai ficar localizado href= no arquivo style.css
+
+### Iniciando
+```html
+body { }
+````
+Escrevemos o body porque é onde nosso código propriamente inicia com textos e imagens
+```html
+background-color: ;
+````
+Aqui serve para mudar a cor do fundo do local que escolhemos a cor, digitando o código, escrevendo o nome ou selecioando manual.
+
+```html
+color: White;
+````
+Escrevemos apenas isto e o nome da cor do texto dentro do local selecionado, jo caso o body, mas se for por exemplo o *strong* {} é só abrir alterar.
+
+```html
+````
+```html
+````
+
+```html
+````
 ```html
 ````
 
