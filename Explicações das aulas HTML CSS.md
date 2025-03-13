@@ -834,7 +834,7 @@ Quando trabalhamos com **CSS**, é essencial entender a diferença entre **Margi
 ## 🔍 Estrutura da Caixa no CSS
 
 Cada elemento HTML pode ser representado como uma caixa, composta pelos seguintes componentes:
-
+```
 +---------------------------+
 |         MARGIN            | (Espaço externo ao redor da borda)
 |  +---------------------+  |
@@ -847,7 +847,7 @@ Cada elemento HTML pode ser representado como uma caixa, composta pelos seguinte
 |  |  +---------------+  |  |
 |  +---------------------+  |
 +---------------------------+
-
+```
 
 ## 📌 Definição de cada um:
 
