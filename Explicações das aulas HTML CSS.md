@@ -536,82 +536,682 @@ usamos o comando GAP
 ````css
 gap: 40px;
 ````
-````
+DEIXANDO A PÁGINA NO PADRÃO 2 
+
+LINKS NA VERTICAL E O NOME: Acesse minhas redes
+
+1- dentro da DIV que separa os links dos textos, vamos inserir um <h2>, ele será o subtitulo
+
+```css
+<body>
+    <header></header>
+    <main class="apresentacao">
+    <section class="apresentacao__conteudo">
+        <h1 class="apresentacao__conteudo__titulo">Eleve seu negócio digital a outro nível <strong>com um Front-end de qualidade!</strong></h1>
+        <p class="apresentacao__conteudo__texto">Olá! Maedson Lima, desenvolvedor back-end com especialidade em, HTML, Java Script e  CSS.Ainda sou estudante. Vamos conversar?</p>
+            <div class="apresentacao__links">
+            <h2>Acesse minhas redes:</h2>
+            <a class="apresentacao__links__link" href="http://instagram.com/_maedson">instagram</a>
+            <a class="apresentacao__links__link" href="https://github.com/maedsonlima">github</a>
+            <a class="apresentacao__links__link" href="https://www.linkedin.com/in/maedson/">Linkedin</a>
+            </div>
+        </section>
+    <img src="eu.png" alt="minha foto no computador codando">
+    </main>
+    <footer></footer>
+</body>
+```
+Agora vamos deixar eles alinhados em coluna, no css na ".apresentacao__links"
+
+O display: flex;  deixa em linhas, vamos colocar em coluna, com: flex-direction: column;
+```css
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+```
+Vamos alinhar esses objetos no centro para ficarem um em cima do outro tudo certinho com o comando align-items: center;
+
+```css
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+```
+vamos separar os itens, estão muito colados, usamos o comando "gap"
+a distância vemos lá no figma como ensinado a cima:
 
 
-````
-````
+```css
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+```
+Alterando a fonte: vamos fazer  o de sempre, criar uma classe dentro do <h2> e chamar de apresentacao__links__subtítulo, e depois alterar no css
+
+```html
+<h2 class="apresentacao__links__subtitulo">Acesse minhas redes:</h2>
+```
+no css sempre colocamos na ordem em que aparece na página, então vamos deixar entre o .apresentação__conteudo__texto e o  .apresentacao__links, colocamos também o peso da fonte em 400;
+e também o tamanho da fonte em 24
+```css
+.apresentacao__links__subtitulo{
+font-family:"Krona One", sans-serif;
+font-weight: 400;
+font-size: 24px;
+}
+
+```
+TIRANDO A COR DO FUNDO DOS LINKS E HABILITANDO BORDA
+
+Para tirar a cor é só transformar o código em comentário com CTRL + K + C
+```css
+/* background-color: #22D4FD; */
+```
+Mudamos a cor do nome para branco conforme o figma
+```css
+color:#f6f6f6;
+```
+A BORDA VOCÊ PEGA NO FIGMA ELE VAI DAR EXATAMENTE COMO É PRA FICAR
+```css
+border: 2px solid #22D4FD;
+```border é a corda, 2px é a largura, solid é o estilo, tem outros como pontilhado etc, e no fim é a cor.
+---
+Mudamos width que é a largura total para 378px conforme figma
+```css
+ width: 378px;
+```
+------------------------------------------------------------------------
+###INSERINDO IMAGENS DOS SIMBOLOS DOS LINKS
+
+Deixamos todos os incones e símbolos em uma pasta separada para facilitar
+
+chamamos ela de ASSETS e alteramos dentro do html, para trocar é só colocar um ./ no começo dentro do src""
+```html
+ <img src="./assets/eu.png"  alt="minha foto no computador codando">
+```
+---
+###COLOCANDO SIMBOLOS  AO LADO DOS NOMES
+
+pega a parte do código que declaramos os nomes dos links um a um, exemplo:
+```html
+<a class="apresentacao__links__link" href="http://instagram.com/_maedson">instagram
 
 
-````
-````
+</a>
+
+```
+Vamos inserir a imagem dentro da mesma forma que inserimos minha foto ficando assim:
+```
+            <a class="apresentacao__links__link" href="http://instagram.com/_maedson">
+                <img src="./assets/instagram.png">
+                instagram 
+            </a>      
+            <a class="apresentacao__links__link" href="https://github.com/maedsonlima">
+                <img src="./assets/github.png">
+                github
+            </a>
+            <a class="apresentacao__links__link" href="https://www.linkedin.com/in/maedson/">
+                <img src="./assets/linkedin.png">
+                Linkedin
+            </a>
+```
+---
+###Alinhando o texto dos links com as fotos dos incones
+
+vamos procurar qual propriedade do CSS usamos para tratar dos links, no caso o .apresentacao__links__link e vamos personalizar, para isso inserimos o comando: display:flex
+
+em seguida o comando para centralizar: justify-content: center;
+
+ele vai deixar no centro, mas ambos colados um no outro, para se parar
+vemos o espaçamento no figma e colocamos o comando gap 
+```html
+.apresentacao__links__link{
+    display:flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid #22D4FD;
+    width: 378px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 24px;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color:#f6f6f6;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    ;
+}
+```
+---
+### HOVER - COMO DESTACAR CONTEÚDO QUANDO PASSAR O MOUSE
+
+ultilizaremos esse recurso nos links
+
+1- VEJA O LOCAL QUE VOCÊ QUER APLICAR, vamos aplicar nos botões que está no 
+
+```html
+.apresentacao__links__link{
+    display:flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid #22D4FD;
+    width: 378px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 24px;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color:#f6f6f6;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    ;
+}
+```
+2- a configuração será substituídas momentaneamente por outra quando ultilizamos o hover, para fazer isto basta chamar a tag + : hover assim:
+```html
+.apresentacao__links__link:hover{
+
+}
+```
+3- Configuremos as coisas que queremos que alterem quando passar o mouse, nesse caso só o fundo do nome dos links ficará um pouco mais claro
+
+```html
+.apresentacao__links__link:hover {
+    background-color: #272727;
+}
+
+```
+---
+### FOOTER - FAZENDO A PARTE DE BAIXO DA PÁGINA
+
+Vamos criar um <p> dentro do footer (tag parágrafo) e colocar o nome dentro:
+```html
+<footer>
+        <p>Desenvolvido por Maedson</p>
+    
+    </footer>
+```
+Agora vamos estilizar, para isso fazemos o de sempre, criamos uma classe no footer
+```
+  <footer class="rodape">
+        <p>Desenvolvido por Maedson</p>
+    
+    </footer>
+```
+No css estilizamos: 
+```
+.rodape {
+    color: #000000;
+    background-color:#22D4FD;
+}
+
+```
+##AJUSTANDO O TAMANHO
+
+Vamos adicionar algo para aumentar, importante ver em elementos no navegador a relação do padding, margin e borda... 
+
+margin: Cria da borda pra fora
+padding: cria da borda pra dentro
+
+adicionaremos um padding do tamanho que está no figma, clicando no objeto e segurando alt ele mostra a distancia
+```css
+.rodape {
+    padding: 24px;
+    color: #000000;
+    background-color:#22D4FD;
+    text-align: center;
+}
+
+```
+## Alinhando o texto no meio da página
+
+Usando o comando text-align: center;
+```css
+.rodape {
+    padding: 24px;
+    color: #000000;
+    background-color:#22D4FD;
+    text-align: center;
+}
+```
+## AJUSTANDO TAMANHO E FONTE e PESO
+
+Usando os comandos de sempre:
+```css
+
+.rodape {
+    padding: 24px;
+    color: #000000;
+    background-color:#22D4FD;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 400px;
+}
+```
+## AJUSTANDO VISUALIZAÇÃO DA PÁGINA NA TELA
+
+No início estabelecemos que seria visualizado 100% da tela no campo body, mas dessa forma o footer fica invisível pois está em baixo então vamos remover esse campo transformando em comentário.
 
 
-````
-````
+### AQUI FIZ UNS EXPERIMENTOS MUDANDO O TIPO DE FLEX BOX DE ALINHAMENTO DE BETWENN PARA COLUMN E AS LATERAIS
+
+NÃO USAREMOS ESSE CÓDIGO, ELE FICOU COMENTADO
+```css
+.apresentacao {
+    margin: auto;
+    padding:5% 24%;
+    display:flex;
+    align-items: center;
+    justify-content: column;
+    gap: 244px;
+}
+```
+---
+### AJUSTANDO TELA
+
+No campo .apresentação é onde ficará a pági de vez, oficial deixamos assim
+```css
+.apresentacao {
+    padding:8% 20%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+```
+# 📏 Diferença entre Margin, Padding e Borda
+
+Quando trabalhamos com **CSS**, é essencial entender a diferença entre **Margin**, **Padding** e **Borda**. Esses três conceitos definem o **espaçamento e estrutura** dos elementos em uma página.
+
+## 🔍 Estrutura da Caixa no CSS
+
+Cada elemento HTML pode ser representado como uma caixa, composta pelos seguintes componentes:
+
++---------------------------+
+|         MARGIN            | (Espaço externo ao redor da borda)
+|  +---------------------+  |
+|  |       BORDER        |  | (A borda do elemento)
+|  |  +---------------+  |  |
+|  |  |   PADDING     |  |  | (Espaço interno entre o conteúdo e a borda)
+|  |  | +-----------+ |  |  |
+|  |  | | CONTENT   | |  |  | (O conteúdo do elemento)
+|  |  | +-----------+ |  |  |
+|  |  +---------------+  |  |
+|  +---------------------+  |
++---------------------------+
 
 
-````
-````
+## 📌 Definição de cada um:
+
+- **Margin** 🏞️ → Espaço externo ao redor da borda do elemento.  
+- **Borda** 🖼️ → Linha ao redor do elemento (pode ser visível ou não).  
+- **Padding** 🎁 → Espaço interno entre a borda e o conteúdo.  
+- **Conteúdo** 📝 → Texto, imagem ou outro elemento dentro da caixa.  
+
+---
+
+## 🎨 Exemplo CSS:
+```css
+.box {
+    margin: 20px;  /* Espaço externo */
+    border: 5px solid red;  /* Borda vermelha */
+    padding: 15px;  /* Espaço interno */
+    background-color: lightblue; /* Cor de fundo */
+}
+
+```
+---
+---
+## HEADER = CABEÇALHO 
+
+Vamos criar  2 botões o da página inicial e o da página sobre mim.
+
+Para navegação na página, onde clicamos e ele leva você a uma outra parte do site que não é um link externo, mas sim viajar na própria página.
+
+- DENTRO DO HEADER USAREMOS O COMANDO: <nav> </nav> para navegar.
+- Criaremos "tags" ancora dentro do nav, as duas que queremos navegar.
+```html
+<body>
+    <header>
+	<nav> 
+	     <a>Home</a>
+	     <a>Sobre mim</a>
+	</nav>	
+
+    </header>
+```
+# Personalizando as ancoras
+
+vamos criar as classes dentro do header para poder personalizar
+
+```html
+<body>
+    <header class="cabecalho">
+	<nav class="cabecalho__menu"> 
+	     <a class="cabecalho__menu__link">Home</a>
+	     <a class="cabecalho__menu__link">Sobre mim</a>
+	</nav>	
+
+    </header>
+```
+Criamos classe para o cabeçalho (pai, área total) 
+o menu (área dos botões)
+link os próprios botões clicáveis
+
+---
+No CSS colocamos as estilizações na ordem em que aparece no site para facilitar a organização, no caso ela ficará antes da .apresentacao{}
+
+e estilizamos conforme figma.
+```css
+.cabecalho__menu__link {
+    font-family: "Montserrat", sans-serif;
+    font-size:24px;
+    font-weight: 600;
+    color: #22D4FD;
+
+}
+```
+### AJUSTANDO A POSIÇÃO
+
+para ajustar as duas ancoras pro lado, vamos usar o padding, para ajustar certinho a posição podemos dar 4 valores
+
+- 1 valor: superior
+- 2 valor: lado direito
+- 3 valor: inferior
+- 4 valor: baixo
+
+Realizaremos os ajustes no campo do cabeçalho que é o apropriado.
+```css
+.cabecalho {
+    padding: 2% 0% 0% 20%;
+}
+```
+Vai ficar recuado no canto esquerdo superior, mas não muito.
+---
+### SEPARANDO OS NOMES
+
+usaremos o flex-box novamente, sempre que queremos alterar a posição do conteúdo, usamos no elemento pai no caso o: .cabecalho__menu 
+```css
+.cabecalho__menu {
+    display:flax;
+    gap: 80px;
+}
+```
+---
+### CRIANDO NOVAS PÁGINAS PARA FAZER INTERAÇÃO E NAVEGAÇÃO
+
+#1- Criamos uma dentro do nosso projeto para guardar os arquivos css que são os estilos, chamaremos de "styles" 
+
+#2- vamos mover o css pra lá e alterar o código do html para que ele volte a pegar os estilos.
+```html
+<link rel="stylesheet" href="./styles/style.css">
+```
+---
+### ABOUT - CRIANDO A PÁGINA "SOBRE MIM"
+
+1- Vamos criar um novo arquivo no projeto com o nome "about.html" será nossa página do sobre mim
+
+2- Para gerar o código base, basta escrever: ! e da um enter no vs code. 
+
+vamos configurar o básico, como a 
+- linguagem 
+- nome do titulo no no head
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+---
+### CRIANDO A NAVEGAÇÃO ENTRE AS PÁGINAS
+
+No nosso arquivo index.html, vamos inserir a função de localizar
+
+"href="" e inserir dentro dele o nome do arquivo da página.
+
+```html
+    <header class="cabecalho">
+        <nav class="cabecalho__menu"> 
+             <a class="cabecalho__menu__link" href="index.html">Home</a>
+             <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+        </nav>	
+    </header>  
+```
+Agora ficou clicavel, apenas aparece um sublinhado nos nomes, vamos tirar no CSS removendo a estilização padrão com o 
+
+text-decoration: none;
+---
+---
+### CRIANDO A BASE DA NOVA PÁGINA
+
+### 1- colocaremos as divisões básicas do <body>
+```html
+<header></header>
+<main></main>
+<footer> </footer> 
+```
+### 2- Vendo o figma,  o cabeçalho  e o footer são iguais então podemos só copiar do index.html
+
+NOSSO CÓDIGO ESTÁ ASSIM:
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim</title>
+</head>
+<body>
+ <h1>sobre mim</h1>
+</body>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu"> 
+            <a class="cabecalho__menu__link" href="index.html">Home</a>
+            <a class="cabecalho__menu__link" href="./about.html">Sobre mim</a>
+       </nav>	
+    </header>
+    <main></main>
+    <footer class="rodape">
+        <p>Desenvolvido por Maedson</p>
+    </footer> 
 
 
-````
-````
+</html>
+```
+---
+### IMPORTANTO A ESTILIZAÇÃO CSS DO PRIMEIRO ARQUIVO PARA O ABOUT ME
 
+Como as estilizações são iguais e as classes, não tem porque criar outro css para a página about, vamos importar o mesmo css
 
-````
-````
+#### 1 - VAMOS NO <HEAD> do arquivo about.html e inserimos o comando:
 
+```html
+link:css
+```
+Vai abrir uma caixa de seleção, você confirma o local do "style.css" e ele vai importar ficando assim:
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+```
+---
+### INSERINDO AS INFORMAÇÕES O BODY  
 
-````
-````
+1- Precisamos criar 2 parágrafos e inserir uma imagem conforme projeto do figma
 
+2- Vamos criar uma SECTION para os nomes, será uma divisão para os TEXTOS E A FOTO
+```html
+   <main>
+        <section>
 
-````
-````
+        </section>
+        <img> </img>
 
+    </main>
 
-````
-````
+```
+3- criaremos o titulo e os parágrafos, para separar os parágrafos usaremos uma div
+```html
+    <main>
+        <section>
+            <h1>Sobre mim</h1>
+            <p></p>
+            <div>
+                <p></p>
+            </div>
+        </section>
+        <img> </img>
 
+    </main>
+```
+*DICA: para criar 2 parágrafos de uma vez só, só colocar "p*2" e da enter.
 
-````
-````
+## VAMOS PREENCHER O PARÁGRAFO 
+```html
+    <main>
+        <section>
+            <h1>Sobre mim</h1>
+            <p>Sou formado em Direito e atualmente estudante de Análise e Desenvolvimento de Sistemas, combinando conhecimentos jurídicos com habilidades em tecnologia. Minha experiência inclui um ano como assessor jurídico no Tribunal de Justiça da Paraíba, onde desenvolvi habilidades analíticas e de comunicação. Na Show Tecnologia, atuei como suporte técnico, atendendo clientes, gerenciando a ativação de equipamentos de rastreamento e controlando custos.
+            </p>
+            <div>
+                <p>Além disso, realizo trabalhos freelance em edição gráfica com Corel Draw e Photoshop, e ofereço serviços de suporte técnico, como formatação e assistência técnica. Tenho proficiência em Word, Excel e PowerPoint, e conhecimentos básicos em Power BI.
+                </p>
+            </div>
+        </section>
+        <img> </img>
 
+```
+4- Para a imagem, ela tem as mesmas propriedades da 1 página, só copiamos o código.
+```html
+<img src="./assets/eu.png"  alt="minha foto no computador codando">
 
-````
-````
+```
+---
+## iMPORTANDO AS ESTILIZAÇÕES DO CSS
 
+1- Vamos copiar as classes do outro arquivo, as mesmas que usamos para estilizar tudo junto, sendo as do:
 
-````
-````
+main
+selection
+h1
+p
+```
+DICA: para escrever dentro de duas tags ao mesmo tempo: 
+- clica na primeira
+- segura alt
+- clica na segunda
+- escreva
 
+O NOSSO CÓDIGO FICOU ASSIM
+```html
+main class="apresentacao">
+        <section class="apresentacao__conteudo">
+            <h1 class="apresentacao__conteudo__titulo">Sobre mim</h1>
+            <p class="apresentacao__conteudo__texto">Sou formado em Direito e atualmente estudante de Análise e Desenvolvimento de Sistemas, combinando conhecimentos jurídicos com habilidades em tecnologia. Minha experiência inclui um ano como assessor jurídico no Tribunal de Justiça da Paraíba, onde desenvolvi habilidades analíticas e de comunicação. Na Show Tecnologia, atuei como suporte técnico, atendendo clientes, gerenciando a ativação de equipamentos de rastreamento e controlando custos.
+            </p>
+            <div>
+                <p class="apresentacao__conteudo__texto">Além disso, realizo trabalhos freelance em edição gráfica com Corel Draw e Photoshop, e ofereço serviços de suporte técnico, como formatação e assistência técnica. Tenho proficiência em Word, Excel e PowerPoint, e conhecimentos básicos em Power BI.
+                </p>
+            </div>
+        </section>
+        <img src="./assets/eu.png"  alt="minha foto no computador codando">
+    </main>
+```
+---
+---
+### VARIÁVEIS NO CSS
 
-````
-````
+## Se precisarmos alterar a cor azul do projeto, teríamos que alterar em vários lugares porque usamos muito.
 
+## Para isso podemos criar uma variável, no qual declaramos que aquela cor vai se chamar a variável x... e utilizar agora x como se fosse o nome da cor. 
 
-````
-````
+## Ou seja, se alterarmos lá na variável que criamos a cor, todos os locais que inserimos o x, vai ser alterado, vai facilitar de mais.
 
+---
+### Para isso precisamos criar as variáveis, no css ultilizamos a tag: 
+```css
+:root {
+  --cor-priaria: #000000;
+  --cor-secundaria:#F6F6F6 
+  --cor-terciaria: #22D4FD;	
+}
+```
+## Entendendo o código acima:
+--cor-primaria = é a variável que vamos usar para representar a cor ou o detalhe que queremos alterar em lote
 
-````
-````
+:#000000 = o que vem depois do 2 pontos é o que vai ser substituído, ou seja quando inserimos a variável, ela terá o valor do que estiver aqui depois do :
+---
+### SUBSTITUINDO AS CORES PELAS VARIÁVEIS
 
+USAREMOS A TAG: var () e dentro dela a variável que criamos correspondente aquela cor ou elemento no local a ser substituído
 
-````
-````
+DICA: digitar var e dar enter, ele vai aparecer (), dar enter e escolhemos a cor.
 
+EX:
+```css
+body {
+    /* height: 100vh; */
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: black;
+    color:#F6F6F6;
+```
+Substituindo
+```css
 
-````
-````
+body {
+    /* height: 100vh; */
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
 
+```
+NO ROOT FICARÁ ASSIM
+```css
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727;
+}
+```
+### CRIANDO VARIÁVEIS PARA AS FONTES
 
-````
-````
+## Como ultilizamos as fontes em muitos locais, é interessante trocar por variável para ficar fácil de alterar, vamos criar e alterar ficando assim:
+```css
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727;
 
+    --fonte-primaria: "Krona one", sans-serif;
+    --fonte-secundaria:  "Montserrat", sans-serif;
 
-
-
-
+}
+```
+Agora só substituir nos locais adequados da mesma forma de cima.
+----
+----
+### PROJETO FINALIZADO - PARABÉNS MAEDSON VOCÊ CONSEGUIU!!!
 
