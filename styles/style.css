@@ -3,7 +3,7 @@
 :root {
     --cor-primaria: #000000;
     --cor-secundaria: #F6F6F6;
-    --cor-terciaria: #FF6500;
+    --cor-terciaria: #22D4FD;
     --cor-hover: #272727;
 
     --fonte-primaria: "Krona one", sans-serif;
@@ -58,7 +58,7 @@ gap: 24px;
 }
 
 .apresentacao__conteudo__titulo { 
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-family: var(--fonte-primaria);   
 }
 .titulo-destaque {
