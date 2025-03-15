@@ -1213,5 +1213,388 @@ NO ROOT FICARÁ ASSIM
 Agora só substituir nos locais adequados da mesma forma de cima.
 ----
 ----
-### PROJETO FINALIZADO - PARABÉNS MAEDSON VOCÊ CONSEGUIU!!!
+### HTML e CSS: trabalhando com responsividade e publicação de projetos
+
+UTIMO CURSO.
+---
+
+## UNIDADES DE MEDIDAS
+
+Quando escolhemos o tamanho da fonte dos textos no nosso navegador, é ideal que o nosso projeto ajuste de tamanho como qualquer outro site, mas da forma que está não está alterando.
+
+Vamos corrigir.
+
+LINK PARA AS UNIDADES DE MEDIDAS DO CSS: https://www.w3schools.com/cssref/css_units.php
+
+## UNIDADES DE MEDIDAS
+
+### Existem duas as:
+
+- Relativas: podem alterar conforme o navegador, ex: rem (ele pega o elemento raiz, a página html que foi definido no navegador É O IDEAL
+
+- Absolutas: são fixas, como cm, pixel, etc...
+
+---
+### CONVERTENDO PIXEL EM REM:
+
+## A REGRA É: 16 pixels, é igual a 1 rem
+
+Utilizando essa igualdade, vamos converter nosso projeto.
+
+ex:
+```css
+.apresentacao__conteudo__titulo { 
+    font-size: 36px;
+    font-family: var(--fonte-primaria);   
+}
+
+```
+36 pixels, dividimos por 16 pra saber o número em REM, no caso será 2.25 rem.
+aplicando:
+```css
+.apresentacao__conteudo__titulo { 
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);   
+}
+```
+### TROCAREMOS TODOS OS LUGARES A FONTE-SIZE QUE TEM PIXEL, POR REM, FICANDO ASSIM:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727;
+
+    --fonte-primaria: "Krona one", sans-serif;
+    --fonte-secundaria:  "Montserrat", sans-serif;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: var(--cor-primaria);
+    color:var(--cor-secundaria);
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 20%;
+}
+
+.cabecalho__menu{
+    display:flex;
+    gap: 100px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-secundaria);
+    font-size:1.5rem;
+    font-weight: 600;
+    color: #22D4FD;
+    text-decoration: none;
+
+}
+
+.apresentacao {
+    padding:10% 20%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.apresentacao__conteudo{
+width: 50%;
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+
+.apresentacao__conteudo__titulo { 
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);   
+}
+.titulo-destaque {
+    color:var(--cor-terciaria);
+}   
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+
+
+
+.apresentacao__links__subtitulo{
+font-family:var(--fonte-primaria);
+font-weight: 400;
+font-size: 1.5rem;
+}
+
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__link{
+    display:flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-terciaria);
+    width: 23.6rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 1.35rem 0rem;
+    text-decoration: none;
+    color:var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    ;
+}
+
+.apresentacao__links__link:hover {
+    background-color: var(--cor-hover);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    padding: 1.5rem;
+    color: var(--cor-primaria);
+    background-color:var(--cor-terciaria);
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}}
+
+```
+### TORNANDO A IMAGEM RESPONSIVA: se ajusta em outras telas e dimensões.
+
+## 1- Vamos usar a porcentagem como unidade de medida para imagens
+
+## OBS: a porcentagem que o navegador vai alterar, vai ser em relação ao tamanho do "pai" da imagem, no caso é o main, a imagem está dentro do main
+
+## se colocarmos 50%, será 50% do tamanho definido no main.
+
+## 1- Para escolher o tamanho da imagem, vamos criar uma classe para ela tanto no index, como no about.html.
+```css
+<img class="apresentacao__imagem" src="./assets/eu.png"  alt="minha foto no computador codando">
+    </main>
+```
+## Criamos e ajustamos o tamanho no CSS
+```css
+.apresentacao__imagem {
+    width: 50%;
+}
+```
+Ajustamos um "width" que significa LARGURA, mas se alterar só ela, também ajusta a altura proporcional.
+```
+---
+## DIMINUINDO O TAMANHO GERAL DOS TEXTOS DE FORMA PROPORCIONAL SEM DISTORCER.
+
+Vamos no conteúdo pai que abraça todos os textos, no caso:
+```html
+<main>
+	<section class="apresentacao__conteudo">
+```
+A section abrange todos os textos. Então vamos colocar em porcentagem no css.
+```css
+.apresentacao__conteudo{
+width: 50%;
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+```
+## ALTERANDO OS LINKS PARA DEIXAR RESPONSIVOS A PÁGINAS DIFERENTES
+```
+.apresentacao__links__navegacao{
+    display:flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-terciaria);
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 21.6px 0px;
+    text-decoration: none;
+    color:var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    ;
+}
+```
+ALTERAMOS SÓ O WIDTH PARA 50%
+---
+### RESPONSIVIDADE NA PRÁTICA - COMO MUDAR O LAYOUT DE ACORDO COM O DISPOSITIVO ACESSADO OU A DIMENSÃO DA TELA?
+
+Primeiro vamos adicionar um gap entre a foto e os textos para evitar de quando a tela for estreita, não colar um no outro.
+```css
+.apresentacao {
+    padding:10% 20%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:92px;
+}
+```
+## MEDIA QUERIES - MUDANDO O LAYOUT DE ACORDO COM A RESOLUÇÃO DA TELA EXIBIDA.
+
+## USAMOS O:
+```css
+@media (max-width:1200px) {
+
+}
+```
+- @media = propriedade que possibilita mudar o layout
+- max-width = largura máxima.
+- : = o espaço após o max-width: é para inserir a largura máxima
+- {} = características que devem ser aplicadas enquanto a largura for menor que o máximo definido no max-width no caso acima, 1200px. 
+
+- Como funciona? de 0 até a largura máxima, o conteúdo a ser exibido será da forma que está dentro do média. 
+
+- Após essa largura máxima, ele começa a ser exibidor conforme foi programado normal.
+
+---
+## NO NOSSO PROJETO, QUEREMOS QUE:
+
+- A imagem fique acima do texto quando a largura da tela for menor que 1200px
+
+1- Vemos onde a imagem e os textos estão inseridos, qual é o pai deles, no caso o: 
+```css
+.apresentacao {
+    padding:10% 20%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:92px;
+}
+```
+2- Podemos notar que o display-flex dele está padrão, no caso fica em linha, precisamos que fique em coluna
+
+então vamos inserir no @media essa condição:
+```css
+@media (max-width: 1200px) {
+    .apresentacao {
+        flex-direction: column;
+    }
+}
+```
+Traduzindo: quando a tela for menor que 1200px, a direção do flex box vai ser em linha, vertical.
+
+PORÉM, A IMAGEM NO PROJETO FOI FEITA PARA FICAR EM BAIXO, POR ISSO DEVEMOS INVERTER A ORDEM COM O COMANDO:
+```css
+
+@media (max-width: 1200px) {
+    .apresentacao {
+        flex-direction: column-reverse;
+    }
+}
+```
+## AJUSTANDO O CABEÇALHO - (HOME E SOBRE MIM) QUANDO A TELA FOR MENOR QUE 1200px.
+
+1- No nosso projeto chamamos a classe de .cabeçalho, ela atualmente está assim:
+```css
+.cabecalho {
+    padding: 2% 0% 0% 20%;
+}
+
+.cabecalho__menu{
+    display:flex;
+    gap: 100px;
+}
+
+```
+2- Vamos ajustar no @media
+
+OBS: JÁ DECLARAMOS O DISPLAY-FLEX; lá em cima, então não precisa de novo, só inserimos no media o que queremos alterar e mais nada. o resto ele mantém.
+```css
+
+}
+
+@media (max-width: 1200px) {
+
+    .cabecalho {
+        padding: 10%;
+    }
+
+    .cabecalho__menu {
+	justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+    }
+}
+
+```
+ALTERAÇÕES:
+
+1- O .cabeçalho ajustamos o paddin para tirar do canto da parede
+2- o tipo de flex box, colocamos o justify-content: center, para centralizar os nomes no meio.
+
+---
+---
+## AJUSTANDO AS LATERAIS NA VISUALIZAÇÃO COM LARGURA < 1200PX
+
+Notamos que o conteúdo fica todo espremido no meio, mas sobra uma borda preta, isso é porque no nosso css
+```css
+.apresentacao {
+    padding:5% 15%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:92px;
+}
+```
+Temos um padding de 5% para superior e inferior, e 15% para as laterias, isso é muito em uma tela estreita, vamos ajustar para 5%
+```css
+@media (max-width: 1200px) {
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding:5%
+    }   
+}
+```
+Agora ficou 5% de largura e altura, como a altura já era 5%, já fica ideal.
+
+
+## Mas o conteúdo do meio ainda não está ocupando o espaço da tela ideal porque definimos a largura que o conteúdo iria ocupar seria de 50% lá no início do projeto
+```css
+
+ .apresentacao__conteudo {
+        width: 50%;
+    }
+```
+## Vamos alterar lá no @media para uma nova propriedade que diz:
+
+## Olha você tem esse espaço x, então ocupe esse espaço.
+
+## a propriedade é: auto. ficando assim:
+```css
+@media (max-width: 1200px) {
+
+ .apresentacao__conteudo {
+        width: auto;
+```
+
+FIM -- PARABÉNS MAEDSON VOCÊ CONSEGUIU FINALIZAR!!!
 
