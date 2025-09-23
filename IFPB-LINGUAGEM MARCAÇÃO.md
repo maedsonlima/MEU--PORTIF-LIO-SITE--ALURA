@@ -82,38 +82,61 @@ Lang é a linguagem que ultilizaremos, no caso português Brasil
 ````
 Dicionário de caracteres que serão ultilizados, deixar esse é o mais usado. Ele engloba todos que ultilizamos inclusive inglês
 
+## OBS: PRIMEIRA COISA QUE DEVEMOS COLOCAR NO CÓDIGO DENTRO DO HEAD, ASSIM:
+```
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>Projeto 1 - página</title>
+    </head>
+    <body>TESTE UM</body>
+</html>
+
+```
+---
+### - HTML 5 - DETALHES IMPORTANTES
+
+```
+<!DOCTYPE html>
+
+```
+Comentário importante para o navegador saber que é um arquivo HTML - Boas práticas
+```
+<html lang= "pt-br">
+```
+É a linguagem de quem está vai ultilizar o site, podemos substituir por outras opções, como:
+```
+<html lang= "pt-pt">
+```
+Nesse caso está em portugues de portugal
 
 ---
+### - INSERINDO PARÁGRAFOS
 
-
+1- não vamos deixar nada solto no <body>, precisamos ultilizar uma tag, no caso
 ```html
-
+<p></p>
 ```
-
-``````html
-
-```
-
+ficando assim:
 ```html
-
+<!DOCTYPE html>
+<html lang= "pt-br"></html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Projeto 1 - página</title>
+    </head>
+    <body>
+<p>TESTE UM/<p></body>
+</html>
 ```
-
-``````html
-
-```
-
+Agora ele criou um parágrafo
+---
+### - Inserindo quebra de linha e linhas e cores
 ```html
-
+<hr color= "green">
 ```
-
-``````html
-
-```
-
-```html
-
-```
-
+hr cria a linha, e dentro deles podemos inserir as cores como está acima
 ``````html
 
 ```
