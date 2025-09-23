@@ -82,7 +82,7 @@ Lang é a linguagem que ultilizaremos, no caso português Brasil
 ```html
 <meta charset="UTF-8">
 ````
-Dicionário de caracteres que serão ultilizados, deixar esse é o mais usado.
+Dicionário de caracteres que serão ultilizados, deixar esse é o mais usado. Ele engloba todos que ultilizamos inclusive inglês
 ```html
 <meta http-equiv="X-UA-compatible" content="IE=edge">
 ````
