@@ -105,10 +105,23 @@ Código completo:
 nome = input("insira seu nome: ")
 print(f"o nome digitado é: {nome}")
 ```
+---
+## - CAST - conversão de String do input para outros tipos
 
+Explicitamos o tipo que queremos guardar, se for número por exemplo usamos:
+
+int = inteiro
+floar = flutuante, valores quebrados
+etc..
+
+ex:
 ```py
-
+idade = int(input("Digite sua idade é: "))
+print (f"sua idade é {idade})
 ```
+traduzindo: Tudo que for digitado dentro do input, será transformado em INT, e depois será guardado na variável idade. 
+
+RESPEITANDO A REGRA DOS PARENTESES, o que estiver na parte de dentro será realizado primeiro.
 
 ```py
 
