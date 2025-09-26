@@ -122,20 +122,42 @@ print (f"sua idade é {idade})
 traduzindo: Tudo que for digitado dentro do input, será transformado em INT, e depois será guardado na variável idade. 
 
 RESPEITANDO A REGRA DOS PARENTESES, o que estiver na parte de dentro será realizado primeiro.
+---
+## - 26/09/25 - AULA  4- CRIANDO VARIÁVEIS PARA CALCULAR NÚMEROS
+
+1- Criamos 2 variáveis
 
 ```py
+numero1 = int(input("Digite um número inteirp: "))
+numero2 = int(input("Digite o segundo número inteiro: "))
+```
+Ele vai pedir o 1 numero, o usuário insere,
+Vai pedir o segundo número, o usuário insere.
+
+### - Somando os números
+```py
+numero1 = int(input("Digite um número inteirp: "))
+numero2 = int(input("Digite o segundo número inteiro: "))
+resultado = numero1 + numero2
+
+print (f"o resultado é:  {resultado}")
 
 ```
-```py
+A variável resultado armazena a soma
+o print mostra o resultado na tela
 
+ou podemos fazer de forma mais rápida.
+
+```py
+print (f"a soma é:  {numero1 + numero2}")
+
+## - DObrando o número
 ```
-
+numero = int(input("Digite um número inteiro: "))
+dobro = numero * 2 
+print (f"o dobro do {numero} é: {dobro}")
 ```py
-
-```
-
-```py
-
+aqui dobramos o número usando o sinal de *, ele multiplica.
 ```
 ```py
 
