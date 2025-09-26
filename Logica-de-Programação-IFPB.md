@@ -248,8 +248,12 @@ numero3 = float(input("Digite a terceira nota: "))
 print (f"a média é:{(numero1 + numero2 + numero3)/3}")
 ```
 Ele vai receber 3 valores, depois vai somar, e dividir por 3.
-```py
 
+---
+## - VALOR PARCELADO EM 10X
+```py
+ValorInicial= float(input("Digite o Valor inicial: "))
+print (f"{ValorInicial} parcelado em 10x é : 10x de: {ValorInicial/10}")
 ```
 ```py
 
