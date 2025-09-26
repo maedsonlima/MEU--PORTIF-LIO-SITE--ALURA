@@ -229,14 +229,25 @@ Elimina a necessidade de variáveis intermediárias.
 Mais limpo, direto e performático.
 
 Boa prática para casos simples como esse.
-```py
 
+---
+## - POTÊNCIA DE UM NUMERO SOBRE OUTRO
+```py
+numero1 = int(input("Digite o primeiro numero: "))
+numero2 = int(input("Digite o segundo numero: "))
+print (f"O {numero2} elevado ao {numero2} é:{numero1 ** numero2}")
 ```
 
+recebe os 2 números, e depois coloca o 2 como a potência do 1
+---
+## - Média aritimédica  de notas
 ```py
-
+numero1 = float(input("Digite a primeira: "))
+numero2 = float(input("Digite a segunda nota: "))
+numero3 = float(input("Digite a terceira nota: "))
+print (f"a média é:{(numero1 + numero2 + numero3)/3}")
 ```
-
+Ele vai receber 3 valores, depois vai somar, e dividir por 3.
 ```py
 
 ```
