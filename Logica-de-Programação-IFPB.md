@@ -177,9 +177,58 @@ salarioInicial = float(input("Digite o salário inicial: "))
 print (f"o {salarioInicial} com 20% é: {salarioInicial * 1.2}")
 
 ```
-Todos os 3 primeiramente armazenam a o valor inserido em um float, já que é numeros decimais e quebrados
-primeiro e segundo tem uma variável para salvar a porcentagem
-no fim todos calculam e devolvem o resultado de formas diferentes
+### 1- modo
+
+Explicação
+
+salarioInicial = float(input(...)):
+Solicita ao usuário que digite o salário inicial e converte para float (número com casas decimais).
+
+porcentagem = (salarioInicial * 20) / 100:
+Calcula 20% do salário.
+
+salarioFInal = porcentagem + salarioInicial:
+Soma os 20% ao salário original para obter o salário final.
+
+print(...):
+Exibe o valor original e o novo salário com o aumento.
+
+🟡 Observação
+
+A variável salarioFInal está com "F" maiúsculo, o que não segue a convenção usual de nomes em Python (snake_case).
+
+Poderia ser mais direto.
+
+
+### 2 - MODO
+
+✅ Explicação
+
+Calcula os 20% como no código anterior.
+
+Em vez de guardar o salário final em uma variável, ele soma diretamente dentro do print().
+
+✅ Vantagem
+
+Menos linhas de código (mais direto).
+
+Funcionalmente idêntico ao primeiro
+
+### 3- MODO
+
+✅ Explicação
+
+Cálculo mais eficiente: multiplica o salário por 1.2, que é o mesmo que somar 20%.
+
+Exemplo: 1000 * 1.2 = 1200.
+
+Elimina a necessidade de variáveis intermediárias.
+
+✅ Vantagem
+
+Mais limpo, direto e performático.
+
+Boa prática para casos simples como esse.
 ```py
 
 ```
