@@ -152,13 +152,34 @@ ou podemos fazer de forma mais rápida.
 print (f"a soma é:  {numero1 + numero2}")
 
 ## - DObrando o número
-```
+
 numero = int(input("Digite um número inteiro: "))
 dobro = numero * 2 
 print (f"o dobro do {numero} é: {dobro}")
-```py
-aqui dobramos o número usando o sinal de *, ele multiplica.
 ```
+---
+aqui dobramos o número usando o sinal de *, ele multiplica.
+
+---
+## - 3 FORMAS DE FAZER PORGENTAGEM DE UM NÚMERO:
+```py
+salarioInicial = float(input("Digite o salário inicial: "))
+porcentagem = (salarioInicial * 20)/100
+salarioFInal = porcentagem + salarioInicial
+print (f"o {salarioInicial} com 20% é: {salarioFInal}")
+
+salarioInicial = float(input("Digite o salário inicial: "))
+porcentagem = (salarioInicial * 20)/100
+print (f"o {salarioInicial} com 20% é: {salarioInicial + porcentagem}")
+
+
+salarioInicial = float(input("Digite o salário inicial: "))
+print (f"o {salarioInicial} com 20% é: {salarioInicial * 1.2}")
+
+```
+Todos os 3 primeiramente armazenam a o valor inserido em um float, já que é numeros decimais e quebrados
+primeiro e segundo tem uma variável para salvar a porcentagem
+no fim todos calculam e devolvem o resultado de formas diferentes
 ```py
 
 ```
